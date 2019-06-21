@@ -38,6 +38,7 @@
         <h2>{{modalContent.title}}</h2>
         <p>{{modalContent.description}}</p>
         <a :href="modalContent.url" target="_blank" class="redirectButton">Check amazing website</a>
+        <a @click="modalIsDisplay = false">Close</a>
       </div>
 
     </div>

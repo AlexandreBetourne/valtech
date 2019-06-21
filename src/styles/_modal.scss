@@ -20,6 +20,9 @@
     width: 500px;
     max-height: 80vh;
     overflow-y: scroll;
+    @media only screen and (max-width: 768px) {
+      width: 80%;
+    }
 
     .img {
       width: 100%;
@@ -31,14 +34,23 @@
       padding: 10px;
     }
 
-    .redirectButton {
+    a {
       padding: 10px;
-      background: black;
-      color: white;
       display: block;
       width: max-content;
       margin: 20px auto 0;
       border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .redirectButton {
+      background: black;
+      color: white;
+    }
+
+    .close {
+      background: black;
+      color: white;
     }
   }
 }
