@@ -5,7 +5,6 @@ Vue.config.productionTip = false
 
 require("./styles/app.scss");
 
-
 new Vue({
 	render: h => h(App),
 }).$mount('#app')

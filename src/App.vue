@@ -6,6 +6,7 @@
   <section>
     <MyComponent />
   </section>
+
 </div>
 </template>
 

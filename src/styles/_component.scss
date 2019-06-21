@@ -6,19 +6,32 @@ $width: 65%;
   justify-content: space-between;
   width: 100%;
   height: 250px;
+  @media only screen and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 
   .content {
-    background: red;
     width: 100%;
     position: relative;
     background-size: cover;
     overflow: hidden;
     cursor: pointer;
+    @media only screen and (max-width: 768px) {
+      * {
+        text-align: left;
+        font-size: 20px !important;
+        font-weight: 300 !important;
+      }
+    }
 
     &:hover {
       .mask {
-        left: -10%;
+        left: -20%;
         transform: skewX(-10deg);
+      }
+
+      .text {
+        transform: translateX(-60%) translateY(-50%);
       }
     }
 
@@ -39,6 +52,7 @@ $width: 65%;
       transform: translateX(-50%) translateY(-50%);
       color: white;
       text-align: right;
+      transition: 0.4s ease;
 
       * {
         margin: 0;
@@ -49,9 +63,16 @@ $width: 65%;
   .left {
     width: $width;
     margin-right: $spacing;
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+      margin: 0;
+    }
 
     .content {
       height: 100%;
+      @media only screen and (max-width: 768px) {
+        height: 200px;
+      }
     }
 
     .text {
@@ -66,9 +87,16 @@ $width: 65%;
 
   .right {
     width: calc(100% - #{$width});
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
 
     .content {
       height: calc(50% - #{$spacing}/2);
+      @media only screen and (max-width: 768px) {
+        height: 200px;
+        margin-bottom: 0 !important;
+      }
 
       &:not(:last-child) {
         margin-bottom: $spacing;
