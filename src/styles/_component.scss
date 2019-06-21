@@ -1,0 +1,87 @@
+$spacing: 2px;
+$width: 65%;
+
+.component {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 250px;
+
+  .content {
+    background: red;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+      .mask {
+        left: -10%;
+        transform: skewX(-10deg);
+      }
+    }
+
+    .mask {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0, 0, 0.4);
+      left: 0;
+      top: 0;
+      transition: 0.4s ease;
+    }
+
+    .text {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      color: white;
+      text-align: right;
+
+      * {
+        margin: 0;
+      }
+    }
+  }
+
+  .left {
+    width: $width;
+    margin-right: $spacing;
+
+    .content {
+      height: 100%;
+    }
+
+    .text {
+      text-align: right;
+
+      * {
+        font-weight: 400;
+        font-size: 28px;
+      }
+    }
+  }
+
+  .right {
+    width: calc(100% - #{$width});
+
+    .content {
+      height: calc(50% - #{$spacing}/2);
+
+      &:not(:last-child) {
+        margin-bottom: $spacing;
+      }
+    }
+
+    .text {
+      text-align: center;
+
+      * {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+}
